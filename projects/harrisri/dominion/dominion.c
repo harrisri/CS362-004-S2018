@@ -650,7 +650,7 @@ void adventurerEffect(int drawntreasure,struct gameState *state, int currentPlay
     }
     drawCard(currentPlayer, state);
     int cardDrawn = state->hand[currentPlayer][state->handCount[currentPlayer]-1];//top card of hand is most recently drawn card.
-    if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
+    if (cardDrawn == copper || cardDrawn == silver) //BUG:if (cardDrawn == copper || cardDrawn == silver || cardDrawn == gold)
       drawntreasure++;
     else{
       temphand[z]=cardDrawn;
@@ -668,7 +668,7 @@ void adventurerEffect(int drawntreasure,struct gameState *state, int currentPlay
 void smithyEffect(int handPos, struct gameState *state, int currentPlayer){
   //+3 Cards
   int i;
-  for (i = 0; i < 3; i++){
+  for (i = 0; i < 4; i++){ //BUG: 4 changed to 3.
     drawCard(currentPlayer, state);
   }
   //discard card from hand
@@ -680,8 +680,8 @@ void greatHallEffect(int handPos, struct gameState *state, int currentPlayer){
   drawCard(currentPlayer, state);
 
   //+1 Actions
-  state->numActions++;
-
+  int actions = state->numActions; //BUG: should be state->numActions++; Remove next line
+  actions += 1;
   //discard card from hand
   discardCard(handPos, currentPlayer, state, 0);
 }
@@ -691,7 +691,7 @@ int embargoEffect(int choice1, struct gameState *state, int handPos, int current
   state->coins = state->coins + 2;
 
   //see if selected pile is in play
-  if ( state->supplyCount[choice1] == -1 ){
+  if ( state->supplyCount[choice1] == 0 ){//BUG: if ( state->supplyCount[choice1] == -1 ){
     return -1;
   }
 
