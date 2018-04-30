@@ -41,6 +41,18 @@ unit3: unittest3.c dominion.o rngs.o
 unit4: unittest4.c dominion.o rngs.o
 	gcc -o unit4 -g unittest4.c dominion.o rngs.o $(CFLAGS)
 
+card1: cardtest1.c dominion.o rngs.o interface.o
+	gcc -o card1 -g cardtest1.c dominion.o rngs.o interface.o $(CFLAGS)
+
+card2: cardtest2.c dominion.o rngs.o interface.o
+	gcc -o card2 -g cardtest2.c dominion.o rngs.o interface.o $(CFLAGS)
+
+card3: cardtest3.c dominion.o rngs.o interface.o
+	gcc -o card3 -g cardtest3.c dominion.o rngs.o interface.o $(CFLAGS)
+
+card4: cardtest4.c dominion.o rngs.o interface.o
+	gcc -o card4 -g cardtest4.c dominion.o rngs.o interface.o $(CFLAGS)
+
 player: player.c interface.o
 	gcc -o player player.c -g  dominion.o rngs.o interface.o $(CFLAGS)
 
