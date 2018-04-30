@@ -51,11 +51,6 @@ void testfullDeckCount(){
         state1->discardCount[player1]++;
     }    
 
-    printf("deckCount player1: %d\n", state1->deckCount[player1]);
-    printf("handCount player1: %d\n", state1->handCount[player1]);
-    printf("discardCount player1: %d\n", state1->discardCount[player1]);
-
-
     //0 cards in anything
     for (i = 0; i < 500; ++i) //500 is max deck/max hand
     {
