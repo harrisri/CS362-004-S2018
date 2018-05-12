@@ -1,2 +1,3 @@
-run make all #To compile the dominion code
-run ./playdom 30 # to run playdom code
+In order to get .out files for random testing, use the following command:
+
+make randomTests
