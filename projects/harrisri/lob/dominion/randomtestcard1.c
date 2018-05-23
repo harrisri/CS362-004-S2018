@@ -15,7 +15,7 @@
 #include <time.h>
 #include <stdlib.h>
 
-// void smithyEffect(int handPos, struct gameState *state, int currentPlayer){
+// void smithyCard(int handPos, struct gameState *state, int currentPlayer){
 //   //+3 Cards
 //   int i;
 //   for (i = 0; i < 4; i++){ //BUG: 4 changed to 3.
@@ -34,7 +34,7 @@ void checkSmithy(int n, int handPos,struct gameState *post, int currentPlayer,in
 	memcpy (&pre, post, sizeof(struct gameState));
 
 	//"play" Smithy with post gamestate
-	smithyEffect(handPos, post, currentPlayer);
+	smithyCard(currentPlayer, post, handPos);
 
 	//correct implemnentation of Smithy card.
 	//This will be used to "play" Smithy card on the pre gamestate.

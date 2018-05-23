@@ -23,7 +23,7 @@ void checkAdventurer(int n, int drawntreasure,struct gameState *post, int curren
 	memcpy (&pre, post, sizeof(struct gameState));
 
 	//"play" adventurer with post gamestate
-	adventurerEffect(drawntreasure, post, currentPlayer, temphand, z);
+	adventurerCard(currentPlayer, post, temphand, z);
 
 	//correct implemnentation of adventurer card.
 	//This will be used to "play" adventurer card on the pre gamestate.
